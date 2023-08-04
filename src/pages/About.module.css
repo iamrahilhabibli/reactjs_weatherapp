@@ -1,0 +1,11 @@
+.MainContainer {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.TextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
