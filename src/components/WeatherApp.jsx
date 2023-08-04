@@ -2,6 +2,7 @@ import { SearchBar } from "./Searchbar";
 import { WeatherDisplay } from "./WeatherDisplay";
 import { useState, useEffect } from "react";
 import style from "./WeatherApp.module.css";
+
 export function WeatherApp() {
   const [initialSearch, setInitialSearch] = useState("Oxford");
   const [weatherData, setWeatherData] = useState(null);
@@ -11,8 +12,14 @@ export function WeatherApp() {
     fetch(
       `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${initialSearch}&aqi=no`
     )
-      .then((response) => response.json())
-      .then((data) => setWeatherData(data))
+      .then((response) => {
+        console.log("Response object: ", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data from API: ", data);
+        setWeatherData(data);
+      })
       .catch(() => alert("Something went wrong..."));
   }, [initialSearch]);
 

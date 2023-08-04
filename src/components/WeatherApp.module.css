@@ -1,0 +1,11 @@
+.Container {
+  width: 25rem;
+  height: calc(17rem * 2);
+  color: white;
+  background-color: #334f71;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
