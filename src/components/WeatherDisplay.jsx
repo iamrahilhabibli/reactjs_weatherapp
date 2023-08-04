@@ -1,4 +1,4 @@
-function WeatherDisplay({ data }) {
+export function WeatherDisplay({ data }) {
   const countryName = data.location.country;
   const cityName = data.location.name;
   const localTime = data.location.localtime;

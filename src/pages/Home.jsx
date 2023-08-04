@@ -1,10 +1,9 @@
-import React from "react";
 import React, { useState, useEffect } from "react";
-
+import { WeatherApp } from "../components/WeatherApp";
 export function Home() {
   return (
     <div>
-      <br />
+      <WeatherApp />
     </div>
   );
 }

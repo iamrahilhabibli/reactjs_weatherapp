@@ -1,4 +1,7 @@
-function WeatherApp() {
+import { SearchBar } from "./Searchbar";
+import { WeatherDisplay } from "./WeatherDisplay";
+import { useState, useEffect } from "react";
+export function WeatherApp() {
   const [initialSearch, setInitialSearch] = useState("Oxford");
   const [weatherData, setWeatherData] = useState(null);
 

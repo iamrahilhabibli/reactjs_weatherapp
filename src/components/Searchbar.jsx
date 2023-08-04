@@ -1,4 +1,5 @@
-function SearchBar({ onSearch }) {
+import { useState } from "react";
+export function SearchBar({ onSearch }) {
   const [input, setInput] = useState("");
 
   const handleSearch = () => {
