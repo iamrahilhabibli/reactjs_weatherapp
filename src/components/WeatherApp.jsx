@@ -1,6 +1,7 @@
 import { SearchBar } from "./Searchbar";
 import { WeatherDisplay } from "./WeatherDisplay";
 import { useState, useEffect } from "react";
+import style from "./WeatherApp.module.css";
 export function WeatherApp() {
   const [initialSearch, setInitialSearch] = useState("Oxford");
   const [weatherData, setWeatherData] = useState(null);
@@ -16,7 +17,7 @@ export function WeatherApp() {
   }, [initialSearch]);
 
   return (
-    <div className="container">
+    <div className={style.Container}>
       <SearchBar onSearch={setInitialSearch} />
       {weatherData && <WeatherDisplay data={weatherData} />}
     </div>
