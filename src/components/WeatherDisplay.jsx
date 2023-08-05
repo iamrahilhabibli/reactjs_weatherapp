@@ -12,6 +12,11 @@ export function WeatherDisplay({ data }) {
   const formattedDate = date.toLocaleDateString("en-US", options);
 
   const iconForCondition = data.current.condition.icon;
+  const currentTemp = data.current.temp_c;
+  const windSpeed = data.current.wind_kph;
+  const humidity = data.current.humidity;
+  const feelsLikeC = data.current.temp_c;
+  const uvIndex = data.current.uv;
   return (
     <div className={styles.weatherDataContainer}>
       <div className={styles.countryAndCityNameContainer}>
@@ -29,6 +34,13 @@ export function WeatherDisplay({ data }) {
         src={`https:${iconForCondition}`}
         alt="weather icon"
       />
+      <div className={styles.weatherDataContainer}>
+        <span className={styles.currentTempSpan}>{currentTemp + " °C"}</span>
+        <span className={styles.windSpeedSpan}>{windSpeed}</span>
+        <span className={styles.humiditySpan}>{humidity}</span>
+        <span className={styles.feelsLikeSpan}>{feelsLikeC}</span>
+        <span className={styles.uvIndexSpan}>{uvIndex}</span>
+      </div>
     </div>
   );
 }

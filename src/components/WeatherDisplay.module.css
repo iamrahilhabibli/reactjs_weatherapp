@@ -22,3 +22,35 @@
   font-size: 22px;
   letter-spacing: 1px;
 }
+.weatherIcon {
+  height: 150px;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: optimizeQuality;
+  animation: bounceAnimation 1s ease-in-out infinite;
+}
+.currentTempSpan {
+  font-size: 75px;
+  font-weight: 400;
+}
+
+.windSpeedSpan,
+.humiditySpan,
+.feelsLikeSpan,
+.uvIndexSpan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+  gap: 10px;
+}
+@keyframes bounceAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
