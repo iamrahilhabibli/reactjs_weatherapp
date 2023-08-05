@@ -34,8 +34,9 @@ export function WeatherDisplay({ data }) {
         src={`https:${iconForCondition}`}
         alt="weather icon"
       />
-      <div className={styles.weatherDataContainer}>
-        <span className={styles.currentTempSpan}>{currentTemp + " °C"}</span>
+      <span className={styles.currentTempSpan}>{currentTemp + " °C"}</span>
+
+      <div className={styles.weatherMetricsGrid}>
         <span className={styles.windSpeedSpan}>{windSpeed}</span>
         <span className={styles.humiditySpan}>{humidity}</span>
         <span className={styles.feelsLikeSpan}>{feelsLikeC}</span>

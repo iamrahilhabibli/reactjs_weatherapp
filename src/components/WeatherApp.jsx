@@ -8,7 +8,7 @@ import sunsetImg from "../images/sunset.jpeg";
 import postMidnightImg from "../images/postmidnight.jpeg";
 import daytimeImg from "../images/daytime.jpeg";
 import { useNavigate } from "react-router-dom";
-
+import { ErrorPage } from "./Errorpage";
 export function WeatherApp() {
   const [initialSearch, setInitialSearch] = useState("Oxford");
   const [weatherData, setWeatherData] = useState(null);
@@ -55,11 +55,7 @@ export function WeatherApp() {
   }, [initialSearch]);
 
   if (errorMessage) {
-    return (
-      <>
-        <div>{errorMessage}</div>;<button onClick={handleBack}>Go back</button>
-      </>
-    );
+    return <ErrorPage errorMessage={errorMessage} handleBack={handleBack} />;
   }
 
   return (
