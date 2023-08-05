@@ -19,11 +19,9 @@ export function SearchBar({ onSearch }) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={handleSearch}>Search</button>
-      {/* <FontAwesomeIcon
-        icon="fa-solid fa-magnifying-glass"
-        style={{ color: "#fcfcfc" }}
-      /> */}
+      <button className={styles.searchBtn} onClick={handleSearch}>
+        Search
+      </button>
     </div>
   );
 }

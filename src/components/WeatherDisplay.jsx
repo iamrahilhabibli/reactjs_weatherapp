@@ -37,10 +37,12 @@ export function WeatherDisplay({ data }) {
       <span className={styles.currentTempSpan}>{currentTemp + " °C"}</span>
 
       <div className={styles.weatherMetricsGrid}>
-        <span className={styles.windSpeedSpan}>{windSpeed}</span>
-        <span className={styles.humiditySpan}>{humidity}</span>
-        <span className={styles.feelsLikeSpan}>{feelsLikeC}</span>
-        <span className={styles.uvIndexSpan}>{uvIndex}</span>
+        <span className={styles.windSpeedSpan}>WindSpeed: {windSpeed}</span>
+        <span className={styles.humiditySpan}>Humidity: {humidity}%</span>
+        <span className={styles.feelsLikeSpan}>
+          Feels like: {feelsLikeC} °C
+        </span>
+        <span className={styles.uvIndexSpan}>UV index: {uvIndex}</span>
       </div>
     </div>
   );

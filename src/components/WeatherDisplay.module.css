@@ -30,6 +30,7 @@
   animation: bounceAnimation 1s ease-in-out infinite;
 }
 .currentTempSpan {
+  color: orange;
   font-size: 75px;
   font-weight: 400;
 }
@@ -60,4 +61,8 @@
   grid-template-rows: 1fr 1fr;
   gap: 50px;
   width: 100%;
+}
+.weatherMetricsGrid span {
+  font-size: 22px;
+  color: orange;
 }

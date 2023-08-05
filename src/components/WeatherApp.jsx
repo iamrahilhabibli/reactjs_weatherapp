@@ -23,7 +23,7 @@ export function WeatherApp() {
   useEffect(() => {
     const api_key = "7e58c48abd6d40fe85b54302231805";
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${initialSearch}&aqi=no&dt=${new Date().toISOString()}`
+      `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${initialSearch}&aqi=no&dt}`
     )
       .then((response) => {
         if (!response.ok) {
