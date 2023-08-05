@@ -7,11 +7,18 @@ import sunriseImg from "../images/sunrise.png";
 import sunsetImg from "../images/sunset.jpeg";
 import postMidnightImg from "../images/postmidnight.jpeg";
 import daytimeImg from "../images/daytime.jpeg";
+import { useNavigate } from "react-router-dom";
 
 export function WeatherApp() {
   const [initialSearch, setInitialSearch] = useState("Oxford");
   const [weatherData, setWeatherData] = useState(null);
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
+  const handleBack = () => {
+    setErrorMessage(null);
+    navigate("/");
+  };
 
   useEffect(() => {
     const api_key = "7e58c48abd6d40fe85b54302231805";
@@ -19,6 +26,9 @@ export function WeatherApp() {
       `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${initialSearch}&aqi=no&dt=${new Date().toISOString()}`
     )
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("No match found");
+        }
         return response.json();
       })
       .then((data) => {
@@ -39,8 +49,18 @@ export function WeatherApp() {
           setBackgroundImage(postMidnightImg);
         }
       })
-      .catch(() => alert("Something went wrong..."));
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
   }, [initialSearch]);
+
+  if (errorMessage) {
+    return (
+      <>
+        <div>{errorMessage}</div>;<button onClick={handleBack}>Go back</button>
+      </>
+    );
+  }
 
   return (
     <div
